@@ -1,0 +1,159 @@
+{
+  "split_version": "v0.1",
+  "split_seed": 20260625,
+  "source_file": "data\\raw\\tickets_synthetic_v0.1.csv",
+  "strategy": "Separación determinista por category::template_family. Por cada categoría se asignan 6 familias a train, 1 a validation y 1 a test.",
+  "counts": {
+    "train": 675,
+    "validation": 112,
+    "test": 113
+  },
+  "category_counts": {
+    "train": {
+      "consulta_general": 112,
+      "solicitud_funcionalidad": 113,
+      "error_tecnico": 112,
+      "pagos_facturacion": 112,
+      "rendimiento": 113,
+      "acceso_autenticacion": 113
+    },
+    "validation": {
+      "consulta_general": 19,
+      "pagos_facturacion": 19,
+      "solicitud_funcionalidad": 18,
+      "rendimiento": 19,
+      "acceso_autenticacion": 18,
+      "error_tecnico": 19
+    },
+    "test": {
+      "pagos_facturacion": 19,
+      "acceso_autenticacion": 19,
+      "error_tecnico": 19,
+      "rendimiento": 18,
+      "solicitud_funcionalidad": 19,
+      "consulta_general": 19
+    }
+  },
+  "family_assignments": {
+    "acceso_autenticacion": {
+      "train": [
+        "cuenta_bloqueada",
+        "sesion_expirada",
+        "credenciales_rechazadas",
+        "cambio_datos_acceso",
+        "activacion_cuenta",
+        "doble_factor"
+      ],
+      "validation": [
+        "cierre_sesion"
+      ],
+      "test": [
+        "recuperacion_no_recibida"
+      ]
+    },
+    "pagos_facturacion": {
+      "train": [
+        "pago_no_registrado",
+        "monto_incorrecto",
+        "pago_rechazado",
+        "suscripcion_cancelada",
+        "factura_no_recibida",
+        "factura_incorrecta"
+      ],
+      "validation": [
+        "cobro_duplicado"
+      ],
+      "test": [
+        "reembolso"
+      ]
+    },
+    "error_tecnico": {
+      "train": [
+        "datos_no_guardados",
+        "servicio_caido",
+        "boton_no_responde",
+        "cierre_inesperado",
+        "duplicados",
+        "pantalla_blanca"
+      ],
+      "validation": [
+        "archivo_falla"
+      ],
+      "test": [
+        "integracion_fallida"
+      ]
+    },
+    "rendimiento": {
+      "train": [
+        "lentitud_horaria",
+        "busqueda_lenta",
+        "proceso_masivo_lento",
+        "archivos_lentos",
+        "carga_lenta",
+        "api_lenta"
+      ],
+      "validation": [
+        "reporte_lento"
+      ],
+      "test": [
+        "congelamiento_temporal"
+      ]
+    },
+    "solicitud_funcionalidad": {
+      "train": [
+        "roles_permisos",
+        "nuevo_pago",
+        "nueva_exportacion",
+        "automatizacion",
+        "filtros_avanzados",
+        "integracion_nueva"
+      ],
+      "validation": [
+        "mejora_interfaz"
+      ],
+      "test": [
+        "nuevo_login"
+      ]
+    },
+    "consulta_general": {
+      "train": [
+        "planes_precios",
+        "disponibilidad_funcion",
+        "estado_proceso",
+        "politicas_requisitos",
+        "como_usar",
+        "horarios_soporte"
+      ],
+      "validation": [
+        "metodos_disponibles"
+      ],
+      "test": [
+        "tiempos_estimados"
+      ]
+    }
+  },
+  "id_overlaps": {
+    "train_validation": [],
+    "train_test": [],
+    "validation_test": []
+  },
+  "family_overlaps": {
+    "train_validation": [],
+    "train_test": [],
+    "validation_test": []
+  },
+  "checks": {
+    "all_source_rows_assigned": true,
+    "no_extra_rows": true,
+    "no_id_overlap": true,
+    "no_family_overlap": true,
+    "all_splits_non_empty": true,
+    "all_categories_in_every_split": true
+  },
+  "all_checks_passed": true,
+  "output_files": {
+    "train": "data\\processed\\train_v0.1.csv",
+    "validation": "data\\processed\\validation_v0.1.csv",
+    "test": "data\\processed\\test_v0.1.csv"
+  }
+}
