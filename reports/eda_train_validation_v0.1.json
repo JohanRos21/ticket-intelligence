@@ -1,0 +1,464 @@
+{
+  "task": "EDA train/validation v0.1",
+  "note": "Este reporte usa solo train_v0.1.csv y validation_v0.1.csv. No lee test_v0.1.csv.",
+  "input_files": {
+    "train": "data/processed/train_v0.1.csv",
+    "validation": "data/processed/validation_v0.1.csv"
+  },
+  "row_counts": {
+    "train": 675,
+    "validation": 112,
+    "combined_without_test": 787
+  },
+  "category_counts": {
+    "train": {
+      "acceso_autenticacion": 113,
+      "pagos_facturacion": 112,
+      "error_tecnico": 112,
+      "rendimiento": 113,
+      "solicitud_funcionalidad": 113,
+      "consulta_general": 112
+    },
+    "validation": {
+      "acceso_autenticacion": 18,
+      "pagos_facturacion": 19,
+      "error_tecnico": 19,
+      "rendimiento": 19,
+      "solicitud_funcionalidad": 18,
+      "consulta_general": 19
+    }
+  },
+  "template_family_counts": {
+    "train": 36,
+    "validation": 6
+  },
+  "length_stats_words": {
+    "train": {
+      "title": {
+        "min": 3,
+        "mean": 4.95,
+        "median": 5.0,
+        "max": 8
+      },
+      "description": {
+        "min": 7,
+        "mean": 17.56,
+        "median": 18.0,
+        "max": 29
+      },
+      "combined_text": {
+        "min": 11,
+        "mean": 22.51,
+        "median": 23.0,
+        "max": 34
+      }
+    },
+    "validation": {
+      "title": {
+        "min": 3,
+        "mean": 5.03,
+        "median": 5.0,
+        "max": 8
+      },
+      "description": {
+        "min": 8,
+        "mean": 17.55,
+        "median": 18.0,
+        "max": 27
+      },
+      "combined_text": {
+        "min": 13,
+        "mean": 22.58,
+        "median": 23.0,
+        "max": 34
+      }
+    }
+  },
+  "overlap_checks": {
+    "exact_text_overlap_train_validation_count": 0,
+    "family_overlap_train_validation_count": 0,
+    "exact_text_overlap_train_validation_examples": [],
+    "family_overlap_train_validation_examples": []
+  },
+  "top_tokens_train_by_category": {
+    "acceso_autenticacion": [
+      {
+        "token": "cuenta",
+        "count": 62
+      },
+      {
+        "token": "puedo",
+        "count": 53
+      },
+      {
+        "token": "acceso",
+        "count": 41
+      },
+      {
+        "token": "sesión",
+        "count": 36
+      },
+      {
+        "token": "código",
+        "count": 32
+      },
+      {
+        "token": "aparece",
+        "count": 31
+      },
+      {
+        "token": "usuario",
+        "count": 29
+      },
+      {
+        "token": "datos",
+        "count": 29
+      },
+      {
+        "token": "entrar",
+        "count": 28
+      },
+      {
+        "token": "problema",
+        "count": 24
+      },
+      {
+        "token": "proceso",
+        "count": 24
+      },
+      {
+        "token": "continuar",
+        "count": 24
+      },
+      {
+        "token": "plataforma",
+        "count": 23
+      },
+      {
+        "token": "confirmado",
+        "count": 23
+      },
+      {
+        "token": "contraseña",
+        "count": 22
+      }
+    ],
+    "pagos_facturacion": [
+      {
+        "token": "pago",
+        "count": 48
+      },
+      {
+        "token": "necesito",
+        "count": 39
+      },
+      {
+        "token": "factura",
+        "count": 38
+      },
+      {
+        "token": "cobro",
+        "count": 28
+      },
+      {
+        "token": "transacción",
+        "count": 27
+      },
+      {
+        "token": "suscripción",
+        "count": 26
+      },
+      {
+        "token": "tarjeta",
+        "count": 23
+      },
+      {
+        "token": "problema",
+        "count": 23
+      },
+      {
+        "token": "confirmado",
+        "count": 23
+      },
+      {
+        "token": "otro",
+        "count": 23
+      },
+      {
+        "token": "usuario",
+        "count": 23
+      },
+      {
+        "token": "comprobante",
+        "count": 23
+      },
+      {
+        "token": "intenté",
+        "count": 22
+      },
+      {
+        "token": "datos",
+        "count": 20
+      },
+      {
+        "token": "aparece",
+        "count": 20
+      }
+    ],
+    "error_tecnico": [
+      {
+        "token": "página",
+        "count": 38
+      },
+      {
+        "token": "operación",
+        "count": 38
+      },
+      {
+        "token": "volver",
+        "count": 34
+      },
+      {
+        "token": "sistema",
+        "count": 32
+      },
+      {
+        "token": "aplicación",
+        "count": 27
+      },
+      {
+        "token": "necesito",
+        "count": 24
+      },
+      {
+        "token": "datos",
+        "count": 24
+      },
+      {
+        "token": "cierra",
+        "count": 23
+      },
+      {
+        "token": "plataforma",
+        "count": 23
+      },
+      {
+        "token": "proceso",
+        "count": 22
+      },
+      {
+        "token": "queda",
+        "count": 21
+      },
+      {
+        "token": "continuar",
+        "count": 19
+      },
+      {
+        "token": "vez",
+        "count": 19
+      },
+      {
+        "token": "sección",
+        "count": 18
+      },
+      {
+        "token": "intenté",
+        "count": 18
+      }
+    ],
+    "rendimiento": [
+      {
+        "token": "demora",
+        "count": 46
+      },
+      {
+        "token": "mucho",
+        "count": 36
+      },
+      {
+        "token": "tiempo",
+        "count": 30
+      },
+      {
+        "token": "responde",
+        "count": 30
+      },
+      {
+        "token": "demasiado",
+        "count": 27
+      },
+      {
+        "token": "lenta",
+        "count": 26
+      },
+      {
+        "token": "tarda",
+        "count": 25
+      },
+      {
+        "token": "proceso",
+        "count": 24
+      },
+      {
+        "token": "segundos",
+        "count": 23
+      },
+      {
+        "token": "página",
+        "count": 22
+      },
+      {
+        "token": "usuario",
+        "count": 22
+      },
+      {
+        "token": "usuarios",
+        "count": 22
+      },
+      {
+        "token": "mostrar",
+        "count": 21
+      },
+      {
+        "token": "correctamente",
+        "count": 20
+      },
+      {
+        "token": "tardan",
+        "count": 20
+      }
+    ],
+    "solicitud_funcionalidad": [
+      {
+        "token": "necesitamos",
+        "count": 60
+      },
+      {
+        "token": "solicito",
+        "count": 45
+      },
+      {
+        "token": "agregar",
+        "count": 30
+      },
+      {
+        "token": "otro",
+        "count": 27
+      },
+      {
+        "token": "sería",
+        "count": 24
+      },
+      {
+        "token": "útil",
+        "count": 24
+      },
+      {
+        "token": "proceso",
+        "count": 23
+      },
+      {
+        "token": "usuario",
+        "count": 23
+      },
+      {
+        "token": "reportes",
+        "count": 20
+      },
+      {
+        "token": "nuevo",
+        "count": 19
+      },
+      {
+        "token": "permisos",
+        "count": 19
+      },
+      {
+        "token": "pago",
+        "count": 18
+      },
+      {
+        "token": "quisiera",
+        "count": 18
+      },
+      {
+        "token": "filtros",
+        "count": 17
+      },
+      {
+        "token": "opción",
+        "count": 17
+      }
+    ],
+    "consulta_general": [
+      {
+        "token": "necesito",
+        "count": 80
+      },
+      {
+        "token": "información",
+        "count": 38
+      },
+      {
+        "token": "saber",
+        "count": 29
+      },
+      {
+        "token": "conocer",
+        "count": 29
+      },
+      {
+        "token": "dónde",
+        "count": 29
+      },
+      {
+        "token": "plataforma",
+        "count": 26
+      },
+      {
+        "token": "quisiera",
+        "count": 25
+      },
+      {
+        "token": "actualizar",
+        "count": 24
+      },
+      {
+        "token": "horario",
+        "count": 23
+      },
+      {
+        "token": "condiciones",
+        "count": 22
+      },
+      {
+        "token": "opción",
+        "count": 20
+      },
+      {
+        "token": "plan",
+        "count": 20
+      },
+      {
+        "token": "estado",
+        "count": 20
+      },
+      {
+        "token": "usuario",
+        "count": 19
+      },
+      {
+        "token": "sucede",
+        "count": 19
+      }
+    ]
+  },
+  "checks": {
+    "train_has_all_expected_categories": true,
+    "validation_has_all_expected_categories": true,
+    "no_exact_text_overlap_train_validation": true,
+    "no_family_overlap_train_validation": true
+  },
+  "all_checks_passed": true
+}
