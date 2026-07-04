@@ -1,0 +1,7 @@
+﻿,pred_acceso_autenticacion,pred_pagos_facturacion,pred_error_tecnico,pred_rendimiento,pred_solicitud_funcionalidad,pred_consulta_general
+true_acceso_autenticacion,18,0,0,0,0,0
+true_pagos_facturacion,0,7,12,0,0,0
+true_error_tecnico,0,3,14,2,0,0
+true_rendimiento,0,0,0,19,0,0
+true_solicitud_funcionalidad,0,0,0,0,18,0
+true_consulta_general,0,1,0,0,6,12
