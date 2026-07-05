@@ -8,6 +8,11 @@ const getAllTickets = async ({ status, priority, search }) => {
       description,
       status,
       priority,
+      predicted_category,
+      CAST(prediction_confidence AS DOUBLE) AS prediction_confidence,
+      model_version,
+      prediction_status,
+      prediction_created_at,
       created_at,
       updated_at
     FROM tickets
@@ -47,6 +52,11 @@ const getTicketById = async (id) => {
       description,
       status,
       priority,
+      predicted_category,
+      CAST(prediction_confidence AS DOUBLE) AS prediction_confidence,
+      model_version,
+      prediction_status,
+      prediction_created_at,
       created_at,
       updated_at
     FROM tickets
@@ -58,13 +68,51 @@ const getTicketById = async (id) => {
   return rows[0];
 };
 
-const createTicket = async ({ title, description, status, priority }) => {
+// ============================================================
+// CREACIÓN DEL TICKET Y PERSISTENCIA DE LA PREDICCIÓN ML
+// ============================================================
+// Los campos de predicción pueden ser null.
+//
+// Esto permite guardar el ticket incluso cuando el
+// microservicio de Machine Learning no está disponible.
+
+const createTicket = async ({
+  title,
+  description,
+  status,
+  priority,
+  predictedCategory,
+  predictionConfidence,
+  modelVersion,
+  predictionStatus,
+  predictionCreatedAt,
+}) => {
   const [result] = await pool.query(
     `
-    INSERT INTO tickets (title, description, status, priority)
-    VALUES (?, ?, ?, ?)
+    INSERT INTO tickets (
+      title,
+      description,
+      status,
+      priority,
+      predicted_category,
+      prediction_confidence,
+      model_version,
+      prediction_status,
+      prediction_created_at
+    )
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `,
-    [title, description, status || 'pendiente', priority || 'media']
+    [
+      title,
+      description,
+      status || 'pendiente',
+      priority || 'media',
+      predictedCategory ?? null,
+      predictionConfidence ?? null,
+      modelVersion ?? null,
+      predictionStatus ?? null,
+      predictionCreatedAt ?? null,
+    ]
   );
 
   return getTicketById(result.insertId);
