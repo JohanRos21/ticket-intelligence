@@ -12,16 +12,14 @@ app.use(express.json());
 
 app.use('/api/tickets', ticketRoutes);
 
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', service: 'backend-node' });
+});
+
 app.get('/', (req, res) => {
   res.json({
     message: 'API REST de Tickets funcionando correctamente',
   });
-});
-
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
 
 app.get('/db-test', async (req, res) => {
@@ -39,3 +37,13 @@ app.get('/db-test', async (req, res) => {
     });
   }
 });
+
+const PORT = process.env.PORT || 3000;
+
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
